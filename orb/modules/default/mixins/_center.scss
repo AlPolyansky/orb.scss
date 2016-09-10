@@ -1,26 +1,18 @@
 @mixin center($pos:center ) {
-  position: absolute;
+  @extend %pos-absolute;
 
   @if ($pos==center) {
-	   top: 50%;
-	   left: 50%;
-	   transform: translate(-50%, -50%);
+	   @extend %pos-center;
 
   } @else if ($pos==top) {
-	   left: 50%;
-	   transform: translate(-50%, 0);
+	   @extend %pos-top;
 
   } @else if ($pos==left) {
-	   top: 50%;
-	   transform: translate(0, -50%);
+	   @extend %pos-left;
   } @else if ($pos==right) {
-	   top: 50%;
-	   right:0;
-	   transform: translate(0, -50%);
+	   @extend %pos-right;
   } @else if ($pos==bottom) {
-	   bottom: 0;
-	   left:50%;
-	   transform: translate(-50%, 0);
+	   @extend %pos-bottom;
   } @else if($pos==none){
 
   }
