@@ -1,0 +1,25 @@
+@mixin clear($ie: false){
+
+// IE 8+
+@if($ie == false){
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+	
+// IE 6+
+@elseif($ie == true){
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+  }
+	&:after {
+		clear: both;
+  }
+}
+
+
+}
